@@ -52,5 +52,8 @@ function deleteElements(startGame, inputField, username) {
         function createClickMe(gameButton) {
             gameButton.addEventListener("click", (e) => {
                 gameButton.innerHTML = "Click me!";
+                setTimeout(() => {
+                    alert("game Done")
+                }, 3000);
             })
         }
