@@ -33,4 +33,11 @@ function deleteElements(startGame, inputField, username) {
         game.removeChild(username);
         game.removeChild(inputField);
         game.removeChild(startGame);
+        gameCreate()
         })};
+
+        function gameCreate() {
+            let gameButton = document.createElement("button");
+            gameButton.innerHTML = "Start game";
+            game.appendChild(gameButton);
+        }
