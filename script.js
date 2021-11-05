@@ -24,11 +24,13 @@ function callMe () {
     startGame.setAttribute("class", "startButton")
    //startGame.setAttribute("class", "iamabutton")
     game.appendChild(startGame);
-changeColor(startGame);
+deleteElements(startGame, inputField, username);
 }
 
-function changeColor(startGame) {
+function deleteElements(startGame, inputField, username) {
     
     startGame.addEventListener("click", (e) => {
-        startGame.style.color = "green";
-    } ) }
+        game.removeChild(username);
+        game.removeChild(inputField);
+        game.removeChild(startGame);
+        })};
