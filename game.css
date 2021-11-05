@@ -1,4 +1,19 @@
 .gameContainer {
   display: flex;
-
+  width: 70%;
+  border-style:outset;
+  background-color: bisque;
+}
+.game{
+  display: flex;
+  width: 70%;
+  background-color:rgb(255, 226, 215);
+  box-shadow: 10px 5px 5px lightcoral;
+}
+.scoreSection{
+  display: flex;
+  width: 30%;
+  background-color: crimson;
+  margin-left: 10%;
+  box-shadow: 10px 5px 5px lightcoral;
 }
