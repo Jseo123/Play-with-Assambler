@@ -50,8 +50,10 @@ function deleteElements(startGame, inputField, username) {
         }
 
         function createClickMe(gameButton) {
+            //Starts game
             gameButton.addEventListener("click", (e) => {
                 gameButton.innerHTML = "Click me!";
+                //Stops the game and creates last page.
                 setTimeout(() => {
                     alert("game Done")
                 }, 3000);
