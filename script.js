@@ -48,13 +48,13 @@ function deleteElements(startGame, inputField, username) {
 
         function createClickMe(gameButton) {
             //Starts game
-            let i = -1;
+            let score = -1;
             gameButton.addEventListener("click", (e) => {
                 gameButton.innerHTML = "Click me!";
                 //adds one to the index for every click
-                i++;
+                score++;
                 //Stops the game and creates last page. The if is to make sure it executes only once.
-                if (i < 1) {
+                if (score < 1) {
                 setTimeout(() => {
                     alert("game Done")
                 }, 3000);};
