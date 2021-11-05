@@ -6,13 +6,11 @@ const scoreSection = document.querySelector(".scoreSection")
 window.onload = (e => {
     callMe();
 })
-
-
-
 //creates the first phase html.
 function callMe () {
-    var username  = document.createElement("h1")
+    var username  = document.createElement("h3")
     username.innerHTML = "Username"
+    username.setAttribute("class", "gameInput")
     game.appendChild(username);
 
     var inputField = document.createElement("input")
@@ -23,7 +21,7 @@ function callMe () {
     startGame.innerHTML = "Start Game"
     startGame.setAttribute("class", "startButton")
    //startGame.setAttribute("class", "iamabutton")
-    game.appendChild(startGame);
+    username.appendChild(startGame);
 
     //calls function to delete the HTML created here.
 deleteElements(startGame, inputField, username);
@@ -34,7 +32,6 @@ function deleteElements(startGame, inputField, username) {
     
     startGame.addEventListener("click", (e) => {
         game.removeChild(username);
-        game.removeChild(startGame);
         //calls on function to create game button.
         gameCreate()
         })};
@@ -51,11 +48,15 @@ function deleteElements(startGame, inputField, username) {
 
         function createClickMe(gameButton) {
             //Starts game
+            let i = -1;
             gameButton.addEventListener("click", (e) => {
                 gameButton.innerHTML = "Click me!";
-                //Stops the game and creates last page.
+                //adds one to the index for every click
+                i++;
+                //Stops the game and creates last page. The if is to make sure it executes only once.
+                if (i < 1) {
                 setTimeout(() => {
                     alert("game Done")
-                }, 3000);
+                }, 3000);};
             })
         }
