@@ -56,7 +56,14 @@ function deleteElements(startGame, inputField, username) {
                 //Stops the game and creates last page. The if is to make sure it executes only once.
                 if (score < 1) {
                 setTimeout(() => {
-                    alert("game Done")
+                    showScore(score, gameButton)
                 }, 3000);};
             })
         }
+
+   function showScore(score, gameButton) {
+       game.removeChild(gameButton);
+       const scoreShow = document.createElement("p")
+       scoreShow.innerHTML = "Congratulations you got " + score.toString() + " " + "points";
+       game.appendChild(scoreShow);
+   }     
