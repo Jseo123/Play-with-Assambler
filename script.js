@@ -17,7 +17,7 @@ function callMe () {
 
     var inputField = document.createElement("input")
     inputField.setAttribute("type", "text")
-    game.appendChild(inputField)
+    username.appendChild(inputField)
 
     var startGame = document.createElement("button")
     startGame.innerHTML = "Start Game"
@@ -34,7 +34,6 @@ function deleteElements(startGame, inputField, username) {
     
     startGame.addEventListener("click", (e) => {
         game.removeChild(username);
-        game.removeChild(inputField);
         game.removeChild(startGame);
         //calls on function to create game button.
         gameCreate()
