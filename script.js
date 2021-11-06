@@ -1,5 +1,5 @@
 const mainContainer = document.querySelector(".gameContainer")
-const game = document.querySelector(".game")
+const game = document.getElementById("gaming")
 const scoreSection = document.querySelector(".scoreSection")
 
 // Calls the function on windows load to create the username input and button.
@@ -63,7 +63,26 @@ function deleteElements(startGame, inputField, username) {
 
    function showScore(score, gameButton) {
        game.removeChild(gameButton);
-       const scoreShow = document.createElement("p")
+
+       var emptyDiv = document.createElement("div")
+       emptyDiv.setAttribute("class", "endGame")
+       game.appendChild(emptyDiv)
+
+       var scoreShow = document.createElement("p")
        scoreShow.innerHTML = "Congratulations you got " + score.toString() + " " + "points";
-       game.appendChild(scoreShow);
+       emptyDiv.appendChild(scoreShow);
+
+     var playAgain =  document.createElement("button")
+playAgain.innerHTML = "Play Again?"
+emptyDiv.appendChild(playAgain)
+
+reset(playAgain, scoreShow, emptyDiv)
    }     
+
+   function reset(playAgain, scoreShow, emptyDiv) {
+
+    playAgain.addEventListener("click", (e) => {
+        playAgain.style.color = "white";
+    })
+       
+   }
