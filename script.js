@@ -81,8 +81,9 @@ reset(playAgain, scoreShow, emptyDiv)
 
    function reset(playAgain, scoreShow, emptyDiv) {
 
-    playAgain.addEventListener("click", (e) => {
-        playAgain.style.color = "white";
+    playAgain.addEventListener("click", () => {
+location.reload();
     })
-       
    }
+
+  
