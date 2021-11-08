@@ -27,6 +27,7 @@ function lastPlayer(scores) {
     let score  = scores[1];
     console.log(score);
     let lastPlayerShow = document.createElement("p")
+    lastPlayerShow.setAttribute("class", "lastPs")
     lastPlayerShow.innerHTML = "Player: " + player + "," + " " + "score: " + score;
     scoreSection.appendChild(lastPlayerShow);
 }
