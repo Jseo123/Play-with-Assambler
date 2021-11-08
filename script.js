@@ -165,6 +165,6 @@ function reset(playAgain, scoreShow, emptyDiv) {
   playAgain.addEventListener("click", () => {
     const ScoreArray = JSON.stringify(displayScore);
     localStorage.setItem("ScoreArray", ScoreArray);
-    location.window.reload();
+   window.location.reload();
   });
 }
