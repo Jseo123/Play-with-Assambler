@@ -66,17 +66,47 @@ function createClickMe(gameButton) {
   //Starts game
   let score = -1;
   gameButton.addEventListener("click", (e) => {
-    gameButton.innerHTML = "Click me!";
-    gameButton.setAttribute("class", "goClick")
-    //adds one to the index for every click
+      //adds one to the index for every click
     score++;
-    //Stops the game and creates last page. The if is to make sure it executes only once.
+
     if (score < 1) {
+    gameButton.innerHTML = "Click me!";
+
+    //create a function to change click me position
+    goCrazy(gameButton)
+
+
+    //Stops the game and creates last page. The if is to make sure it executes only once.
+    
       setTimeout(() => {
         showScore(score, gameButton);
-      }, 3000);
+      }, 10000);
     }
   });
+}
+
+function goCrazy(gameButton) {
+    setTimeout(() => {
+        gameButton.setAttribute("class", "goClick")
+        findMe(gameButton)
+    }, 3000);
+    return;
+    
+}
+
+function findMe(gameButton) {
+
+    setTimeout(() => {
+        gameButton.setAttribute("class", "goClick2")
+        letsPlay(gameButton)
+    }, 3000);
+}
+
+function letsPlay(gameButton) {
+    setTimeout(() => {
+        gameButton.setAttribute("class", "goClick3")
+
+    }, 4000);
 }
 
 function showScore(score, gameButton) {
