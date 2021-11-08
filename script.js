@@ -5,11 +5,29 @@ const displayScore = [];
 
 // Calls the function on windows load to create the username input and button.
 window.onload = (e) => {
-  let stringedScore = localStorage.getItem("ScoreArray");
-  let scores = JSON.parse(stringedScore);
-  console.log(scores);
+    let i = 0;
+    
+  scoreSideFuntion(i)
   callMe();
 };
+
+
+function scoreSideFuntion(i) {
+    let stringedScore = localStorage.getItem("ScoreArray");
+  let scores = JSON.parse(stringedScore);
+  console.log(scores);
+  lastPlayer(scores)
+}
+
+function lastPlayer(scores) {
+    let player = scores[0];
+    console.log(player);
+    let score  = scores[1];
+    console.log(score);
+    let lastPlayerShow = document.createElement("p")
+    lastPlayerShow.innerHTML = "Player: " + player + "," + " " + "score: " + score;
+    scoreSection.appendChild(lastPlayerShow);
+}
 //creates the first phase html.
 function callMe() {
   // Added form element to be able to capture username.
@@ -98,7 +116,7 @@ function goCrazy(gameButton) {
     setTimeout(() => {
         gameButton.setAttribute("class", "goClick")
         findMe(gameButton)
-    }, 3000);
+    }, 1000);
     return;
     
 }
@@ -108,14 +126,14 @@ function findMe(gameButton) {
     setTimeout(() => {
         gameButton.setAttribute("class", "goClick2")
         letsPlay(gameButton)
-    }, 3000);
+    }, 1000);
 }
 
 function letsPlay(gameButton) {
     setTimeout(() => {
         gameButton.setAttribute("class", "goClick3")
 
-    }, 4000);
+    }, 1000);
 }
 
 function showScore(score, gameButton) {
