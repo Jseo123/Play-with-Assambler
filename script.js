@@ -32,7 +32,6 @@ function callMe() {
   startGame.innerHTML = "Start Game";
   startGame.setAttribute("class", "startButton");
   startGame.setAttribute("type", "submit");
-  //startGame.setAttribute("class", "iamabutton")
   username.appendChild(startGame);
 
   //calls function to delete the HTML created here.
@@ -68,6 +67,7 @@ function createClickMe(gameButton) {
   let score = -1;
   gameButton.addEventListener("click", (e) => {
     gameButton.innerHTML = "Click me!";
+    gameButton.setAttribute("class", "goClick")
     //adds one to the index for every click
     score++;
     //Stops the game and creates last page. The if is to make sure it executes only once.
