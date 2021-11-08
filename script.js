@@ -15,22 +15,20 @@ function scoreSideFuntion() {
     let stringedScore = localStorage.getItem("ScoreArray");
   let scores = JSON.parse(stringedScore);
   oldPlayers = scores;
-  console.log(scores);
+  console.log(oldPlayers);
   lastPlayer(scores)
 }
 
 function lastPlayer(scores) {
     let player = scores[0];
-    console.log(player);
     let score  = scores[1];
-    console.log(score);
     let lastPlayerShow = document.createElement("p")
     lastPlayerShow.setAttribute("class", "lastPs")
     lastPlayerShow.innerHTML = "Player: " + player + "," + " " + "score: " + score;
     scoreSection.appendChild(lastPlayerShow);
 }
 
-console.log(oldPlayers);
+
 
 //creates the first phase html.
 function callMe() {
