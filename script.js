@@ -1,40 +1,57 @@
 const mainContainer = document.querySelector(".gameContainer");
-const game = document.querySelector(".game");
+const game = document.getElementById("gaming");
 const scoreSection = document.querySelector(".scoreSection");
+const displayScore = [];
 
 // Calls the function on windows load to create the username input and button.
 window.onload = (e) => {
+  let stringedScore = localStorage.getItem("ScoreArray");
+  let scores = JSON.parse(stringedScore);
+  console.log(scores);
   callMe();
 };
 //creates the first phase html.
 function callMe() {
-  var username = document.createElement("h3");
+  // Added form element to be able to capture username.
+  var formulary = document.createElement("form");
+  game.appendChild(formulary);
+
+  //Turned Username into a label to be able to add form properties.
+  var username = document.createElement("label");
   username.innerHTML = "Username";
   username.setAttribute("class", "gameInput");
-  game.appendChild(username);
-
+  username.setAttribute("for", "inputField");
+  formulary.appendChild(username);
+  //Gave inputField properties to be able to capture infor and store later.
   var inputField = document.createElement("input");
   inputField.setAttribute("type", "text");
+  inputField.setAttribute("name", "inputField");
   username.appendChild(inputField);
 
   var startGame = document.createElement("button");
   startGame.innerHTML = "Start Game";
   startGame.setAttribute("class", "startButton");
+  startGame.setAttribute("type", "submit");
   //startGame.setAttribute("class", "iamabutton")
   username.appendChild(startGame);
 
   //calls function to delete the HTML created here.
-  deleteElements(startGame, inputField, username);
+  deleteElements(startGame, inputField, username, formulary);
 }
 
 //deletes html elements.
-function deleteElements(startGame, inputField, username) {
-  startGame.addEventListener("click", (e) => {
-    game.removeChild(username);
+function deleteElements(startGame, inputField, username, formulary) {
+  formulary.addEventListener("submit", (e) => {
+    //prevents form submit.
+    e.preventDefault();
+    game.removeChild(formulary);
     //calls on function to create game button.
     gameCreate();
+    //pushed Username into display score array.
+    displayScore.push(inputField.value);
   });
 }
+console.log(displayScore);
 
 //creates game button
 function gameCreate() {
@@ -64,8 +81,28 @@ function createClickMe(gameButton) {
 
 function showScore(score, gameButton) {
   game.removeChild(gameButton);
-  const scoreShow = document.createElement("p");
+  displayScore.push(score);
+
+  var emptyDiv = document.createElement("div");
+  emptyDiv.setAttribute("class", "endGame");
+  game.appendChild(emptyDiv);
+
+  var scoreShow = document.createElement("p");
   scoreShow.innerHTML =
     "Congratulations you got " + score.toString() + " " + "points";
-  game.appendChild(scoreShow);
+  emptyDiv.appendChild(scoreShow);
+
+  var playAgain = document.createElement("button");
+  playAgain.innerHTML = "Play Again?";
+  emptyDiv.appendChild(playAgain);
+
+  reset(playAgain, scoreShow, emptyDiv);
+}
+
+function reset(playAgain, scoreShow, emptyDiv) {
+  playAgain.addEventListener("click", () => {
+    const ScoreArray = JSON.stringify(displayScore);
+    localStorage.setItem("ScoreArray", ScoreArray);
+    location.reload();
+  });
 }
