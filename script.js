@@ -14,20 +14,23 @@ var formulary = document.createElement("form")
 game.appendChild(formulary)
 
 
-    var username  = document.createElement("h3")
-    username.innerHTML = "Username"
-    username.setAttribute("class", "gameInput")
-    formulary.appendChild(username);
+var username  = document.createElement("label")
+username.innerHTML = "Username"
+username.setAttribute("class", "gameInput")
+username.setAttribute("for", "inputField")
+formulary.appendChild(username);
 
-    var inputField = document.createElement("input")
-    inputField.setAttribute("type", "text")
-    formulary.appendChild(inputField)
+var inputField = document.createElement("input")
+inputField.setAttribute("type", "text")
+inputField.setAttribute("name", "inputField")
+username.appendChild(inputField)
 
-    var startGame = document.createElement("button")
-    startGame.innerHTML = "Start Game"
-    startGame.setAttribute("class", "startButton")
-   //startGame.setAttribute("class", "iamabutton")
-    formulary.appendChild(startGame);
+var startGame = document.createElement("button")
+startGame.innerHTML = "Start Game"
+startGame.setAttribute("class", "startButton")
+startGame.setAttribute("type", "submit")
+//startGame.setAttribute("class", "iamabutton")
+username.appendChild(startGame);
 
     //calls function to delete the HTML created here.
 deleteElements(startGame, inputField, username, formulary)
@@ -41,7 +44,10 @@ function deleteElements(startGame, inputField, username, formulary) {
         game.removeChild(formulary);
         //calls on function to create game button.
         gameCreate()
+        displayScore.push(inputField.value)
         })};
+        console.log(displayScore)
+
 
         //creates game button
         function gameCreate() {
@@ -70,6 +76,7 @@ function deleteElements(startGame, inputField, username, formulary) {
 
    function showScore(score, gameButton) {
        game.removeChild(gameButton);
+       displayScore.push(score)
 
        var emptyDiv = document.createElement("div")
        emptyDiv.setAttribute("class", "endGame")
