@@ -15,6 +15,8 @@ function scoreSideFuntion() {
     let stringedScore = localStorage.getItem("ScoreArray");
   let scores = JSON.parse(stringedScore);
   oldPlayers = scores;
+  //make a for each function to save all players in local storage and then another to get them out and build a historic record
+  
   console.log(oldPlayers);
   lastPlayer(scores)
 }
