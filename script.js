@@ -1,6 +1,7 @@
-const mainContainer = document.querySelector(".gameContainer")
-const game = document.getElementById("gaming")
-const scoreSection = document.querySelector(".scoreSection")
+const mainContainer = document.querySelector(".gameContainer");
+const game = document.getElementById("gaming");
+const scoreSection = document.querySelector(".scoreSection");
+const displayScore = []
 
 // Calls the function on windows load to create the username input and button.
 window.onload = (e => {
@@ -8,30 +9,36 @@ window.onload = (e => {
 })
 //creates the first phase html.
 function callMe () {
+
+var formulary = document.createElement("form")
+game.appendChild(formulary)
+
+
     var username  = document.createElement("h3")
     username.innerHTML = "Username"
     username.setAttribute("class", "gameInput")
-    game.appendChild(username);
+    formulary.appendChild(username);
 
     var inputField = document.createElement("input")
     inputField.setAttribute("type", "text")
-    username.appendChild(inputField)
+    formulary.appendChild(inputField)
 
     var startGame = document.createElement("button")
     startGame.innerHTML = "Start Game"
     startGame.setAttribute("class", "startButton")
    //startGame.setAttribute("class", "iamabutton")
-    username.appendChild(startGame);
+    formulary.appendChild(startGame);
 
     //calls function to delete the HTML created here.
-deleteElements(startGame, inputField, username);
+deleteElements(startGame, inputField, username, formulary)
 }
 
 //deletes html elements.
-function deleteElements(startGame, inputField, username) {
+function deleteElements(startGame, inputField, username, formulary) {
     
-    startGame.addEventListener("click", (e) => {
-        game.removeChild(username);
+    formulary.addEventListener("submit", (e) => {
+        e.preventDefault();
+        game.removeChild(formulary);
         //calls on function to create game button.
         gameCreate()
         })};
