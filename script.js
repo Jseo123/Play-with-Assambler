@@ -2,7 +2,7 @@ const mainContainer = document.querySelector(".gameContainer");
 const game = document.getElementById("gaming");
 const scoreSection = document.querySelector(".scoreSection");
 const displayScore = [];
-const oldPlayers = []
+let oldPlayers = []
 
 // Calls the function on windows load to create the username input and button.
 window.onload = (e) => {
@@ -14,6 +14,7 @@ window.onload = (e) => {
 function scoreSideFuntion() {
     let stringedScore = localStorage.getItem("ScoreArray");
   let scores = JSON.parse(stringedScore);
+  oldPlayers = scores;
   console.log(scores);
   lastPlayer(scores)
 }
