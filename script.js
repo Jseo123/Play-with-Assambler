@@ -47,10 +47,19 @@ function deleteElements(startGame, inputField, username, formulary) {
     //calls on function to create game button.
     gameCreate();
     //pushed Username into display score array.
+    let fieldValue = inputField.value;
     displayScore.push(inputField.value);
+    createCurrentPlayer(fieldValue)
   });
 }
 console.log(displayScore);
+function createCurrentPlayer(fieldValue) {
+    var currentPlayer = document.createElement("p")
+    currentPlayer.innerHTML = "Currently playing: " + fieldValue;
+    currentPlayer.setAttribute("class", "currentPlayer")
+    scoreSection.appendChild(currentPlayer);
+    
+}
 
 //creates game button
 function gameCreate() {
