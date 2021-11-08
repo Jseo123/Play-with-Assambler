@@ -6,8 +6,6 @@ const oldPlayers = []
 
 // Calls the function on windows load to create the username input and button.
 window.onload = (e) => {
-    
-   
   scoreSideFuntion()
   callMe();
 };
@@ -29,7 +27,6 @@ function lastPlayer(scores) {
     lastPlayerShow.setAttribute("class", "lastPs")
     lastPlayerShow.innerHTML = "Player: " + player + "," + " " + "score: " + score;
     scoreSection.appendChild(lastPlayerShow);
-    oldPlayers.push(lastPlayerShow)
 }
 
 console.log(oldPlayers);
@@ -168,5 +165,6 @@ function reset(playAgain, scoreShow, emptyDiv) {
   playAgain.addEventListener("click", () => {
     const ScoreArray = JSON.stringify(displayScore);
     localStorage.setItem("ScoreArray", ScoreArray);
+    location.window.reload();
   });
 }
