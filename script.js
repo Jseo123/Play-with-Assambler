@@ -5,21 +5,24 @@ const displayScore = []
 
 // Calls the function on windows load to create the username input and button.
 window.onload = (e => {
+  let stringedScore = localStorage.getItem("ScoreArray")
+ let scores = JSON.parse(stringedScore)
+console.log(scores)
     callMe();
 })
 //creates the first phase html.
 function callMe () {
-
+// Added form element to be able to capture username.
 var formulary = document.createElement("form")
 game.appendChild(formulary)
 
-
+//Turned Username into a label to be able to add form properties.
 var username  = document.createElement("label")
 username.innerHTML = "Username"
 username.setAttribute("class", "gameInput")
 username.setAttribute("for", "inputField")
 formulary.appendChild(username);
-
+//Gave inputField properties to be able to capture infor and store later.
 var inputField = document.createElement("input")
 inputField.setAttribute("type", "text")
 inputField.setAttribute("name", "inputField")
@@ -40,10 +43,12 @@ deleteElements(startGame, inputField, username, formulary)
 function deleteElements(startGame, inputField, username, formulary) {
     
     formulary.addEventListener("submit", (e) => {
+        //prevents form submit.
         e.preventDefault();
         game.removeChild(formulary);
         //calls on function to create game button.
         gameCreate()
+        //pushed Username into display score array.
         displayScore.push(inputField.value)
         })};
         console.log(displayScore)
@@ -96,6 +101,8 @@ reset(playAgain, scoreShow, emptyDiv)
    function reset(playAgain, scoreShow, emptyDiv) {
 
     playAgain.addEventListener("click", () => {
+        const ScoreArray = JSON.stringify(displayScore)
+        localStorage.setItem("ScoreArray", ScoreArray)
 location.reload();
     })
    }
