@@ -125,7 +125,7 @@ function goCrazy(gameButton) {
 }
 
 function findMe(gameButton) {
-
+// ramdom
     setTimeout(() => {
         gameButton.setAttribute("class", "goClick2")
         letsPlay(gameButton)
