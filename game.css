@@ -1,12 +1,12 @@
-.body{
-  font-family: 'Cairo', sans-serif;
-  font-family: 'Lato', sans-serif;
+.body {
+  font-family: "Cairo", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 .gameContainer {
   display: flex;
-height: 40em;
-width: 90%;
-  border-style:outset;
+  height: 40em;
+  width: 90%;
+  border-style: outset;
   background-color: bisque;
   justify-content: space-between;
   margin-left: auto;
@@ -14,10 +14,10 @@ width: 90%;
   margin-top: 10%;
   margin-bottom: 10%;
 }
-.game{
+.game {
   display: flex;
   width: 60%;
-  background-color:rgb(236, 223, 218);
+  background-color: rgb(236, 223, 218);
   box-shadow: 10px 5px 5px rgb(243, 158, 158);
   justify-content: center;
   align-self: center;
@@ -25,13 +25,13 @@ width: 90%;
   align-items: center;
   margin-left: 5%;
 }
-.user{
+.user {
   display: flex;
   text-align: center;
   color: aliceblue;
   justify-content: center;
 }
-.scoreSection{
+.scoreSection {
   display: flex;
   flex-direction: column;
   width: 15%;
@@ -42,34 +42,33 @@ width: 90%;
   align-self: flex-start;
 }
 
-.startButton{
-
+.startButton {
 }
-.goClick{
-position: absolute;
-top: 15%;
+.goClick {
+  position: absolute;
+  top: 15%;
 }
 
-.goClick2{
+.goClick2 {
   position: absolute;
   top: 15%;
   right: 60%;
-  }
+}
 
-  .goClick3{
-    position: absolute;
-    bottom: 25%;
-    }
+.goClick3 {
+  position: absolute;
+  bottom: 25%;
+}
 
 .game button {
-    background-color: red;
+  background-color: red;
 }
 
 .gameInput {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-.currentPlayer{
+.currentPlayer {
   display: flex;
   flex-direction: column;
   margin-left: 10%;
@@ -79,6 +78,6 @@ top: 15%;
   color: black;
 }
 .endGame {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }

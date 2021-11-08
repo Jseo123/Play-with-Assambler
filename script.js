@@ -13,10 +13,12 @@ window.onload = (e) => {
 
 
 function scoreSideFuntion(i) {
+    i++
     let stringedScore = localStorage.getItem("ScoreArray");
   let scores = JSON.parse(stringedScore);
   console.log(scores);
   lastPlayer(scores)
+  console.log(i)
 }
 
 function lastPlayer(scores) {
