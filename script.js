@@ -2,23 +2,22 @@ const mainContainer = document.querySelector(".gameContainer");
 const game = document.getElementById("gaming");
 const scoreSection = document.querySelector(".scoreSection");
 const displayScore = [];
+const oldPlayers = []
 
 // Calls the function on windows load to create the username input and button.
 window.onload = (e) => {
-    let i = 0;
     
-  scoreSideFuntion(i)
+   
+  scoreSideFuntion()
   callMe();
 };
 
 
-function scoreSideFuntion(i) {
-    i++
+function scoreSideFuntion() {
     let stringedScore = localStorage.getItem("ScoreArray");
   let scores = JSON.parse(stringedScore);
   console.log(scores);
   lastPlayer(scores)
-  console.log(i)
 }
 
 function lastPlayer(scores) {
@@ -30,7 +29,11 @@ function lastPlayer(scores) {
     lastPlayerShow.setAttribute("class", "lastPs")
     lastPlayerShow.innerHTML = "Player: " + player + "," + " " + "score: " + score;
     scoreSection.appendChild(lastPlayerShow);
+    oldPlayers.push(lastPlayerShow)
 }
+
+console.log(oldPlayers);
+
 //creates the first phase html.
 function callMe() {
   // Added form element to be able to capture username.
@@ -139,6 +142,7 @@ function letsPlay(gameButton) {
     }, 1000);
 }
 
+//game over, before play again.
 function showScore(score, gameButton) {
   game.removeChild(gameButton);
   displayScore.push(score);
@@ -155,14 +159,14 @@ function showScore(score, gameButton) {
   var playAgain = document.createElement("button");
   playAgain.innerHTML = "Play Again?";
   emptyDiv.appendChild(playAgain);
-
   reset(playAgain, scoreShow, emptyDiv);
+
+
 }
 
 function reset(playAgain, scoreShow, emptyDiv) {
   playAgain.addEventListener("click", () => {
     const ScoreArray = JSON.stringify(displayScore);
     localStorage.setItem("ScoreArray", ScoreArray);
-    location.reload();
   });
 }
