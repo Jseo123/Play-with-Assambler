@@ -70,13 +70,25 @@ function createClickMe(gameButton) {
     gameButton.innerHTML = "Click me!";
     //adds one to the index for every click
     score++;
+
+    //create a function to change click me position
+    goCrazy(gameButton)
+
+
     //Stops the game and creates last page. The if is to make sure it executes only once.
     if (score < 1) {
       setTimeout(() => {
         showScore(score, gameButton);
-      }, 3000);
+      }, 9000);
     }
   });
+}
+
+function goCrazy(gameButton) {
+    setTimeout(() => {
+        gameButton.setAttribute("class", "" )
+    }, 2000);
+    
 }
 
 function showScore(score, gameButton) {
