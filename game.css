@@ -4,8 +4,8 @@
 }
 .gameContainer {
   display: flex;
-height: 40em;
-width: 90%;
+  height: 40em;
+  width: 60%;
   border-style:outset;
   background-color: bisque;
   justify-content: space-between;
@@ -16,14 +16,14 @@ width: 90%;
 }
 .game{
   display: flex;
-  width: 60%;
+  width: 35%;
   background-color:rgb(236, 223, 218);
-  box-shadow: 10px 5px 5px rgb(243, 158, 158);
+  box-shadow: 10px 5px 5px rgb(179, 123, 123);
   justify-content: center;
   align-self: center;
   height: 50%;
   align-items: center;
-  margin-left: 5%;
+  margin-left: 15%;
 }
 .user{
   display: flex;
@@ -32,16 +32,41 @@ width: 90%;
   justify-content: center;
 }
 .scoreSection{
+  order: 0;
   display: flex;
   flex-direction: column;
-  width: 15%;
+  width: 30%;
   background-color: crimson;
+  margin-top: 5%;
+  margin-bottom: 10%;
   margin-left: 10%;
   margin-right: 5%;
   box-shadow: 10px 5px 5px rgb(173, 89, 89);
   align-self: flex-start;
 }
 
+.currentPlayer{
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 3em;
+  background-color: blanchedalmond;
+  color: black;
+}
+
+.lastPs{
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 20em;
+  background-color: rgb(248, 250, 250);
+}
 .startButton{
 
 }
@@ -69,15 +94,6 @@ top: 15%;
 .gameInput {
     display: flex;
     flex-direction: column;
-}
-.currentPlayer{
-  display: flex;
-  flex-direction: column;
-  margin-left: 10%;
-  margin-right: 10%;
-  height: 20em;
-  background-color: blanchedalmond;
-  color: black;
 }
 .endGame {
     display: flex;
