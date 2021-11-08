@@ -1,29 +1,42 @@
+.body{
+
+}
 .gameContainer {
   display: flex;
-height: 35em;
-width: 70%;
+height: 40em;
+width: 90%;
   border-style:outset;
   background-color: bisque;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 .game{
   display: flex;
-  width: 70%;
-  background-color:rgb(255, 226, 215);
-  box-shadow: 10px 5px 5px lightcoral;
+  width: 60%;
+  background-color:rgb(236, 223, 218);
+  box-shadow: 10px 5px 5px rgb(243, 158, 158);
   justify-content: center;
   align-self: center;
-  height: 40%;
+  height: 50%;
   align-items: center;
+  margin-left: 5%;
+}
+.user{
+  display: flex;
+  text-align: center;
+  color: aliceblue;
+  justify-content: center;
 }
 .scoreSection{
   display: flex;
   width: 30%;
   background-color: crimson;
   margin-left: 10%;
-  box-shadow: 10px 5px 5px lightcoral;
+  margin-right: 5%;
+  box-shadow: 10px 5px 5px rgb(173, 89, 89);
   align-self: flex-start;
 }
 
