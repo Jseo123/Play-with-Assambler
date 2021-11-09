@@ -4,7 +4,7 @@
 const mainContainer = document.querySelector(".gameContainer");
 const game = document.getElementById("gaming");
 const scoreSection = document.querySelector(".scoreSection");
-const displayScore = [];
+let displayScore = [];
 let oldPlayers = []
 // Calls the function on windows load to create the username input and button.
 window.onload = (e) => {
@@ -17,10 +17,24 @@ function scoreSideFuntion() {
  
     let stringedScore = localStorage.getItem("ScoreArray");
   let scores = JSON.parse(stringedScore);
-  //make a for each function to save all players in local storage and then another to get them out and build a historic record
-  
-  console.log(oldPlayers);
+  //make a for each function to save all players in local
+  //storage and then another to get them out and build a historic record
   lastPlayer(scores)
+  forLocalStorage(scores)
+}
+
+function forLocalStorage(scores) {
+  if (scores){
+
+    oldPlayers.push(scores)
+let i = 0;
+ oldPlayers.forEach(element => {
+  let x  = i++;
+
+let z = JSON.stringify(element)
+let storage = localStorage.setItem("savedOldPlayers", )
+ });
+  }
 }
 
 
@@ -38,7 +52,6 @@ if (scores){
     scoreSection.appendChild(lastPlayerShow);
   }
   }
-
 
 
 
@@ -85,7 +98,7 @@ function deleteElements(startGame, inputField, username, formulary) {
     createCurrentPlayer(fieldValue)
   });
 }
-console.log(displayScore);
+
 function createCurrentPlayer(fieldValue) {
     var currentPlayer = document.createElement("p")
     currentPlayer.innerHTML = "Currently playing: " + fieldValue;
@@ -141,14 +154,31 @@ function findMe(gameButton) {
     setTimeout(() => {
         gameButton.setAttribute("class", "goClick2")
         letsPlay(gameButton)
-    }, 1000);
+    }, 2000);
 }
 
 function letsPlay(gameButton) {
     setTimeout(() => {
         gameButton.setAttribute("class", "goClick3")
 
-    }, 1000);
+    }, 2000);
+    keepPlaying(gameButton)
+}
+
+function keepPlaying(gameButton) {
+  setTimeout(() => {
+    gameButton.setAttribute("class", "goClick4")
+
+}, 1000);
+  playMore(gameButton)
+}
+
+function playMore(gameButton) {
+  setTimeout(() => {
+    gameButton.setAttribute("class", "goClick5")
+
+}, 2000);
+  
 }
 
 //game over, before play again.
