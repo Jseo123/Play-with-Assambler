@@ -88,17 +88,28 @@ function callMe() {
   startGame.setAttribute("class", "startButton");
   startGame.setAttribute("type", "submit");
   username.appendChild(startGame);
+  
+  var giftmoon = document.createElement("iframe");
+  giftmoon.setAttribute("src", "https://giphy.com/embed/f7eeSQiMEfNUVVBuNI");
+  giftmoon.setAttribute("class", "giphy-embed");
+  game.appendChild(giftmoon);
+
+  var giftastro = document.createElement("iframe");
+  giftastro.setAttribute("src", "https://giphy.com/embed/eH4qxdqDul3ZCAXg6i");
+  giftastro.setAttribute("class", "giphy-astro");
+  mainContainer.appendChild(giftastro);
 
   //calls function to delete the HTML created here.
-  deleteElements(startGame, inputField, username, formulary);
+  deleteElements(startGame, inputField, username, formulary, giftmoon)
 }
 
 //deletes html elements.
-function deleteElements(startGame, inputField, username, formulary) {
+function deleteElements(startGame, inputField, username, formulary, giftmoon) {
   formulary.addEventListener("submit", (e) => {
     //prevents form submit.
     e.preventDefault();
     game.removeChild(formulary);
+    game.removeChild(giftmoon);
     //calls on function to create game button.
     gameCreate();
     //pushed Username into display score array.
