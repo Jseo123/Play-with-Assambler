@@ -6,12 +6,21 @@ const game = document.getElementById("gaming");
 const scoreSection = document.querySelector(".scoreSection");
 let displayScore = [];
 let oldPlayers = []
+let x = oldPlayers.length;
 // Calls the function on windows load to create the username input and button.
 window.onload = (e) => {
   scoreSideFuntion()
   callMe();
+  rescueThemPlayers()
 };
 
+
+function rescueThemPlayers() {
+ let a = localStorage.getItem("savedOldPlayers");
+ let savedPlayers = JSON.parse(a)
+ oldPlayers.push(savedPlayers)
+ console.log(savedPlayers)
+}
 
 function scoreSideFuntion() {
  
@@ -20,22 +29,22 @@ function scoreSideFuntion() {
   //make a for each function to save all players in local
   //storage and then another to get them out and build a historic record
   lastPlayer(scores)
-  forLocalStorage(scores)
 }
 
-function forLocalStorage(scores) {
-  if (scores){
 
-    oldPlayers.push(scores)
-let i = 0;
- oldPlayers.forEach(element => {
-  let x  = i++;
+//function forLocalStorage(scores) {
+ // if (scores){
 
-let z = JSON.stringify(element)
+    //oldPlayers.push(scores)
+//let i = 0;
+ //oldPlayers.forEach(element => {
+ // let x  = i++;
+
+//let z = JSON.stringify(element)
 //let storage = localStorage.setItem("savedOldPlayers", )
- });
-  }
-}
+ //});
+  //}
+//}
 
 
 function lastPlayer(scores) {
@@ -214,6 +223,10 @@ function reset(playAgain, scoreShow, emptyDiv) {
   playAgain.addEventListener("click", () => {
     const ScoreArray = JSON.stringify(displayScore);
     localStorage.setItem("ScoreArray", ScoreArray);
+    oldPlayers.push(displayScore)
+    let savedOldPlayers = JSON.stringify(oldPlayers)
+    localStorage.setItem("savedOldPlayers", savedOldPlayers)
+
    window.location.reload();
   });
 }
