@@ -14,8 +14,19 @@ window.onload = (e) => {
 function rescueFromLocalStorage() {
    if (JSON.parse(localStorage.getItem("objectInArray"))) {
   displayScore = JSON.parse(localStorage.getItem("objectInArray"))
+  printScores()
 }}
 
+function printScores() {
+ displayScore.forEach(element => {
+    let user = element.username
+    let scores = element.score
+
+    let scoreDisplay = document.createElement("p")
+    scoreDisplay.innerHTML = "Player: " + user + " " + "," + " " + "score: " + scores;
+    scoreSection.appendChild(scoreDisplay);
+  });
+}
 
 function scoreSideFuntion() {
  
@@ -38,7 +49,7 @@ if (scores){
 
     let lastPlayerShow = document.createElement("p")
     lastPlayerShow.setAttribute("class", "lastPs")
-    lastPlayerShow.innerHTML = "Player: " + player + "," + " " + "score: " + score;
+    lastPlayerShow.innerHTML = "Last player: " + player + "," + " " + "score: " + score;
     scoreSection.appendChild(lastPlayerShow);
   }
   }
