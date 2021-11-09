@@ -16,23 +16,25 @@ window.onload = (e) => {
 function scoreSideFuntion() {
  
     let stringedScore = localStorage.getItem("ScoreArray");
-    if (stringedScore =! null){
   let scores = JSON.parse(stringedScore);
-  oldPlayers = scores;
   //make a for each function to save all players in local storage and then another to get them out and build a historic record
   
   console.log(oldPlayers);
   lastPlayer(scores)
 }
-}
+
 
 function lastPlayer(scores) {
+  if (scores.lenght =! undefined) {
     let player = scores[0];
     let score  = scores[1];
+
     let lastPlayerShow = document.createElement("p")
     lastPlayerShow.setAttribute("class", "lastPs")
     lastPlayerShow.innerHTML = "Player: " + player + "," + " " + "score: " + score;
     scoreSection.appendChild(lastPlayerShow);
+  }
+
 }
 
 
