@@ -32,7 +32,7 @@ let i = 0;
   let x  = i++;
 
 let z = JSON.stringify(element)
-let storage = localStorage.setItem("savedOldPlayers", )
+//let storage = localStorage.setItem("savedOldPlayers", )
  });
   }
 }
