@@ -25,17 +25,21 @@ function scoreSideFuntion() {
 
 
 function lastPlayer(scores) {
-  if (scores.lenght =! undefined) {
+if (scores){
+
     let player = scores[0];
     let score  = scores[1];
+
+
 
     let lastPlayerShow = document.createElement("p")
     lastPlayerShow.setAttribute("class", "lastPs")
     lastPlayerShow.innerHTML = "Player: " + player + "," + " " + "score: " + score;
     scoreSection.appendChild(lastPlayerShow);
   }
+  }
 
-}
+
 
 
 
