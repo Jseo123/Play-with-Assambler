@@ -97,6 +97,12 @@
   bottom: 50%;
 }
 
+.goClick6 {
+  position: absolute;
+  right: 50%;
+  bottom: 40%;
+}
+
 .game button {
     background-color: red;
     margin-top: 5%;

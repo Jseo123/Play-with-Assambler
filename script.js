@@ -178,7 +178,14 @@ function playMore(gameButton) {
     gameButton.setAttribute("class", "goClick5")
 
 }, 2000);
-  
+  goNuts(gameButton)
+}
+
+function goNuts(gameButton) {
+  setTimeout(() => {
+    gameButton.setAttribute("class", "goClick6")
+
+}, 1000);
 }
 
 //game over, before play again.
