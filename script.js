@@ -1,9 +1,11 @@
+
+
+//remember to add if to check if there is something in local storage.
 const mainContainer = document.querySelector(".gameContainer");
 const game = document.getElementById("gaming");
 const scoreSection = document.querySelector(".scoreSection");
 const displayScore = [];
 let oldPlayers = []
-
 // Calls the function on windows load to create the username input and button.
 window.onload = (e) => {
   scoreSideFuntion()
@@ -12,13 +14,16 @@ window.onload = (e) => {
 
 
 function scoreSideFuntion() {
+ 
     let stringedScore = localStorage.getItem("ScoreArray");
+    if (stringedScore =! null){
   let scores = JSON.parse(stringedScore);
   oldPlayers = scores;
   //make a for each function to save all players in local storage and then another to get them out and build a historic record
   
   console.log(oldPlayers);
   lastPlayer(scores)
+}
 }
 
 function lastPlayer(scores) {
