@@ -40,27 +40,29 @@ html{
 .user {
   order: 1;
   display: flex;
+  padding: 5%;
   text-align: center;
   color: aliceblue;
   justify-content: center;
 }
 .startButton{
   order: 2;
+  margin-top: 10%;
   padding: 5%;
   background-color: red;
 }
 .startTheGame {
   order: 2;
-  padding: 30%;
+  padding: 40%;
   text-transform: uppercase;
   background-color: red;
   margin-top: 5%;
 }
 .giphy-embed{ /*LUNA GIF*/
-  margin-top: 5%;
-  order: 4;
-  width: 40%;
-  height:35%
+  margin-top: %;
+  order: 3;
+  width: 30%;
+  height:40%
 }
 .giphy-astro{
   position: relative;
@@ -77,8 +79,6 @@ html{
   background-color: crimson;
   margin-top: 5%;
   margin-bottom: 10%;
-  margin-left: 10%;
-  margin-right: 5%;
   box-shadow: 10px 5px 5px rgb(173, 89, 89);
   align-self: flex-start;
 }
@@ -128,11 +128,12 @@ html{
 
 .goCrazy {
   position: relative;
-  background-image:url("https://giphy.com/embed/eH4qxdqDul3ZCAXg6i"); background-repeat:repeat;
-  background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
+  padding: 30%;
+  text-transform: uppercase;
+  background-color: linear-gradient(red,purple,white);
+  margin-top: 5%;
 }
+
+
 .goCrazy:hover {
-  cursor: grabbing;
-}
+  cursor: grabbing;}
