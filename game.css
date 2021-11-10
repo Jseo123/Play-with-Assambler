@@ -6,14 +6,14 @@ html{
   font-family: "Lato", sans-serif;
 }
 .body1{
-  background: linear-gradient(#342555, #381b4b, rgb(95, 4, 95), rgb(102, 95, 105));
+  background: linear-gradient(#020103, #120738, rgb(29, 39, 95), rgb(8, 9, 17));
 }
 .gameContainer {
   display: flex;
   flex-direction: row;
   order: 0;
   height: 40em;
-  width: 60%;
+  width: 70%;
   box-shadow: 30px 10px blanchedalmond;
   border-style: outset;
   background-image: url("https://www.tuexperto.com/wp-content/uploads/2019/12/imagenes-espacio-2.jpg");
@@ -30,7 +30,7 @@ html{
   order: 0;
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 40%;
   justify-content: center;
   align-self: center;
   height: 50%;
@@ -38,7 +38,6 @@ html{
   margin-left: 15%;
 }
 .user {
-  order: 1;
   display: flex;
   padding: 5%;
   text-align: center;
@@ -53,23 +52,21 @@ html{
 }
 .startTheGame {
   order: 2;
-  padding: 40%;
+  padding: 10%;
   text-transform: uppercase;
+  color: aliceblue;
   background-color: red;
   margin-top: 5%;
 }
 .giphy-embed{ /*LUNA GIF*/
-  margin-top: %;
+  margin-left: 10%;
   order: 3;
   width: 30%;
   height:40%
 }
 .giphy-astro{
-  position: relative;
-  left: -75%;
-  margin-top: 5%;
-  width: 20%;
-  height: 30%;
+  position: absolute;
+
 }
 .scoreSection{
   order: 0;
@@ -77,8 +74,9 @@ html{
   flex-direction: column;
   width: 30%;
   background-color: crimson;
-  margin-top: 5%;
+  margin-top: 2%;
   margin-bottom: 10%;
+  margin-right: 3%;
   box-shadow: 10px 5px 5px rgb(173, 89, 89);
   align-self: flex-start;
 }
@@ -120,16 +118,19 @@ html{
 
 .playAgain {
   background-color: red;
+  padding: 15%;
+  font-size: 20px;
 }
 
 .scoreShow {
   color: white;
+  font-size: 20px;
 }
 
 .goCrazy {
   position: relative;
-  padding: 30%;
+  padding: 10%;
   text-transform: uppercase;
-  background-color: linear-gradient(red,purple,white);
+  background-color:  red;
   margin-top: 5%;
 }
