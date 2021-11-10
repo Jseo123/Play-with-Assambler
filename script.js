@@ -44,7 +44,7 @@ function callContainerSide(containerSide) {
   
 
       displayScore.sort(function (a, b) {
-        return a.score - b.score;
+        return b.score - a.score;
       });
 
       console.log(displayScore);
