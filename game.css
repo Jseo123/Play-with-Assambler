@@ -59,10 +59,10 @@ html{
   margin-top: 5%;
 }
 .giphy-embed{ /*LUNA GIF*/
-  margin-top: %;
+  margin-top: 5%;
   order: 3;
   width: 30%;
-  height:40%
+  height:40%;
 }
 .giphy-astro{
   position: relative;
