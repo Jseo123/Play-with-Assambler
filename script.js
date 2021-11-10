@@ -2,31 +2,15 @@
 const mainContainer = document.querySelector(".gameContainer");
 const game = document.getElementById("gaming");
 const scoreSection = document.querySelector(".scoreSection");
+
 let displayScore = [];
 let myPlayerScore = {username:"", score:""};
 // Calls the function on windows load to create the username input and button.
 window.onload = (e) => {
   scoreSideFuntion()
   callMe();
-  rescueFromLocalStorage();
+
 };
-
-function rescueFromLocalStorage() {
-   if (JSON.parse(localStorage.getItem("objectInArray"))) {
-  displayScore = JSON.parse(localStorage.getItem("objectInArray"))
-  printScores()
-}}
-
-function printScores() {
- displayScore.forEach(element => {
-    let user = element.username
-    let scores = element.score
-
-    let scoreDisplay = document.createElement("p")
-    scoreDisplay.innerHTML = "Player: " + user + " " + "," + " " + "score: " + scores;
-    scoreSection.appendChild(scoreDisplay);
-  });
-}
 
 function scoreSideFuntion() {
     let stringedScore = localStorage.getItem("ScoreArray");
@@ -38,18 +22,37 @@ function scoreSideFuntion() {
 
 
 function lastPlayer(scores) {
-if (scores){
-
+  if (scores){
+    
     let player = scores.username;
     let score  = scores.score;
-
+    
+    let containerSide = document.createElement("div");
+    containerSide.setAttribute("class", "lastPs");
+    scoreSection.appendChild(containerSide);
     let lastPlayerShow = document.createElement("p");
-    lastPlayerShow.setAttribute("class", "lastPs");
     lastPlayerShow.innerHTML = "Last player: " + player + "," + " " + "score: " + score;
-    scoreSection.appendChild(lastPlayerShow);
+    containerSide.appendChild(lastPlayerShow);
+    callContainerSide(containerSide)
   }
   }
 
+function callContainerSide(containerSide) {
+  if (containerSide) {
+    if (JSON.parse(localStorage.getItem("objectInArray"))) {
+      displayScore = JSON.parse(localStorage.getItem("objectInArray"))
+  
+      displayScore.forEach(element => {
+      let user = element.username
+      let scores = element.score
+  
+      let scoreDisplay = document.createElement("p")
+      scoreDisplay.innerHTML = "Player: " + user + " " + "," + " " + "score: " + scores;
+      containerSide.appendChild(scoreDisplay);
+    });
+  }
+  }
+}
 
 
 
@@ -140,49 +143,31 @@ function createClickMe(gameButton) {
 
     //create a function to change click me position
 
-
     //Stops the game and creates last page. The if is to make sure it executes only once.
     
-    function goCrazy(gameButton) {
-      gameButton.style.position = "absolute";
-      gameButton.style.left = Math.floor(Math.random)*500 + 1;
-      gameButton.style.right = Math.floor(Math.random)*500 + 1;
-      console.log(math.random)
-    }
-
     
-      setTimeout(() => {
-        showScore(score, gameButton);
-      }, 10000);
-    }
-  });
+    setTimeout(() => {
+      showScore(score, gameButton);
+    }, 10000);
+  }
+});
 }
 
 function goCrazy(gameButton) {
-    setTimeout(() => {
-        gameButton.setAttribute("class", "goClick")
-        findMe(gameButton)
-    }, 1000);
-    return;
+
+  // gameButton.style.position = "absolute";
+  // gameButton.style.left = Math.floor(Math.random)*500 + 1;
+  // gameButton.style.right = Math.floor(Math.random)*500 + 1;
+
+// var i= Math.floor(Math.random()*500)+1;
+// var j = Math.floor(Math.random()*500)+1;
+// gameButton.style.position = "absolute"; 
+// gameButton.sytle.left = i+"px"; 
+// gameButton.style.right = j+"px";
+
+
+//   console.log(math.random)
 }
-
-function findMe(gameButton) {
-    setTimeout(() => {
-        gameButton.setAttribute("class", "goClick2")
-        letsPlay(gameButton)
-    }, 2000);
-}
-
-function letsPlay(gameButton) {
-    setTimeout(() => {
-        gameButton.setAttribute("class", "goClick3")
-let i =  Math.floor(Math.random() * 500);
-gameButton.style.background = "red";
-gameButton.style.left = i + "px";
-
-}
-
-
 
 //game over, before play again.
 function showScore(score, gameButton) {
