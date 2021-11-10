@@ -132,6 +132,8 @@ html{
   padding: auto;
   text-transform: uppercase;
   font-size: 120%;
+  text-transform:;
+  border-radius: 10%;
   color: aliceblue;
   margin-top: 5%;
   background: url("/images/profilepicturev2.jpg");
