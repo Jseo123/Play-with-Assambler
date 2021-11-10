@@ -48,7 +48,7 @@ function callContainerSide(containerSide) {
       });
 
       console.log(displayScore);
-if (displayScore.lenght < 9) {
+while (displayScore.lenght < 9) {
       displayScore.forEach(element => {
       let user = element.username
       let scores = element.score
