@@ -48,7 +48,7 @@ function callContainerSide(containerSide) {
       });
 
       console.log(displayScore);
-
+if (displayScore.lenght < 9) {
       displayScore.forEach(element => {
       let user = element.username
       let scores = element.score
@@ -56,7 +56,7 @@ function callContainerSide(containerSide) {
       let scoreDisplay = document.createElement("p")
       scoreDisplay.innerHTML = "Player: " + user + " " + "," + " " + "score: " + scores;
       containerSide.appendChild(scoreDisplay);
-    });
+    });}
   }
   }
 }
