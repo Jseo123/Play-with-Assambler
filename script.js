@@ -114,6 +114,7 @@ function createCurrentPlayer(fieldValue) {
 function gameCreate() {
   let gameButton = document.createElement("button");
   gameButton.innerHTML = "Start game";
+  gameButton.setAttribute("class", "startTheGame")
   game.appendChild(gameButton);
 
   var giftastro = document.createElement("iframe");
@@ -131,12 +132,13 @@ function createClickMe(gameButton) {
   gameButton.addEventListener("click", (e) => {
       //adds one to the index for every click
     score++;
+    goCrazy(gameButton)
+    gameButton.setAttribute("class", "")
 
     if (score < 1) {
     gameButton.innerHTML = "Click me!";
 
     //create a function to change click me position
-    goCrazy(gameButton)
 
 
     //Stops the game and creates last page. The if is to make sure it executes only once.
@@ -174,33 +176,13 @@ function findMe(gameButton) {
 function letsPlay(gameButton) {
     setTimeout(() => {
         gameButton.setAttribute("class", "goClick3")
+let i =  Math.floor(Math.random() * 500);
+gameButton.style.background = "red";
+gameButton.style.left = i + "px";
 
-    }, 2000);
-    keepPlaying(gameButton)
 }
 
-function keepPlaying(gameButton) {
-  setTimeout(() => {
-    gameButton.setAttribute("class", "goClick4")
 
-}, 1000);
-  playMore(gameButton)
-}
-
-function playMore(gameButton) {
-  setTimeout(() => {
-    gameButton.setAttribute("class", "goClick5")
-
-}, 2000);
-  goNuts(gameButton)
-}
-
-function goNuts(gameButton) {
-  setTimeout(() => {
-    gameButton.setAttribute("class", "goClick6")
-
-}, 1000);
-}
 
 //game over, before play again.
 function showScore(score, gameButton) {
@@ -212,12 +194,14 @@ function showScore(score, gameButton) {
 
 
   var scoreShow = document.createElement("p");
+  scoreShow.setAttribute("class", "scoreShow")
   scoreShow.innerHTML =
     "Congratulations you got " + score.toString() + " " + "points";
   emptyDiv.appendChild(scoreShow);
 
   var playAgain = document.createElement("button");
   playAgain.innerHTML = "Play Again?";
+  playAgain.setAttribute("class", "playAgain")
   emptyDiv.appendChild(playAgain);
 console.log(myPlayerScore)
 

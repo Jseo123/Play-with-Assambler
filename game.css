@@ -47,8 +47,9 @@ html{
 .startButton{
   order: 2;
   padding: 5%;
+  background-color: red;
 }
-.game button {
+.startTheGame {
   order: 2;
   padding: 30%;
   text-transform: uppercase;
@@ -124,35 +125,6 @@ html{
   right: 60%;
 }
 
-.goClick3 {
-  padding: 5%;
-  text-transform: uppercase;
-  position: absolute;
-  bottom: 25%;
-}
-
-.goClick4 {
-  padding: 5%;
-  text-transform: uppercase;
-  position: absolute;
-  bottom: 50%;
-}
-
-.goClick5 {
-  padding: 5%;
-  text-transform: uppercase;
-  position: absolute;
-  right: 70%;
-  bottom: 50%;
-}
-
-.goClick6 {
-  padding: 5%;
-  text-transform: uppercase;
-  position: absolute;
-  right: 50%;
-  bottom: 40%;
-}
 
 .gameInput {
   display: flex;
@@ -165,4 +137,12 @@ html{
 .endGame {
   display: flex;
   flex-direction: column;
+}
+
+.playAgain {
+  background-color: red;
+}
+
+.scoreShow {
+  color: white;
 }
