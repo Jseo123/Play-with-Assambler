@@ -29,14 +29,12 @@ function printScores() {
 }
 
 function scoreSideFuntion() {
- 
     let stringedScore = localStorage.getItem("ScoreArray");
-  let scores = JSON.parse(stringedScore);
+    let scores = JSON.parse(stringedScore);
   //make a for each function to save all players in local
   //storage and then another to get them out and build a historic record
-  lastPlayer(scores)
+  lastPlayer(scores);
 }
-
 
 
 function lastPlayer(scores) {
@@ -45,10 +43,8 @@ if (scores){
     let player = scores.username;
     let score  = scores.score;
 
-
-
-    let lastPlayerShow = document.createElement("p")
-    lastPlayerShow.setAttribute("class", "lastPs")
+    let lastPlayerShow = document.createElement("p");
+    lastPlayerShow.setAttribute("class", "lastPs");
     lastPlayerShow.innerHTML = "Last player: " + player + "," + " " + "score: " + score;
     scoreSection.appendChild(lastPlayerShow);
   }
@@ -145,6 +141,14 @@ function createClickMe(gameButton) {
 
     //Stops the game and creates last page. The if is to make sure it executes only once.
     
+    function goCrazy(gameButton) {
+      gameButton.style.position = "absolute";
+      gameButton.style.left = Math.floor(Math.random)*500 + 1;
+      gameButton.style.right = Math.floor(Math.random)*500 + 1;
+      console.log(math.random)
+    }
+
+    
       setTimeout(() => {
         showScore(score, gameButton);
       }, 10000);
@@ -158,11 +162,9 @@ function goCrazy(gameButton) {
         findMe(gameButton)
     }, 1000);
     return;
-    
 }
 
 function findMe(gameButton) {
-// ramdom
     setTimeout(() => {
         gameButton.setAttribute("class", "goClick2")
         letsPlay(gameButton)
