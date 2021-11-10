@@ -46,8 +46,6 @@ function callContainerSide(containerSide) {
         return b.score - a.score;
       });
 
-      console.log(displayScore);
-while (displayScore.lenght < 9) {
       displayScore.forEach(element => {
       let user = element.username
       let scores = element.score
@@ -55,7 +53,7 @@ while (displayScore.lenght < 9) {
       let scoreDisplay = document.createElement("p")
       scoreDisplay.innerHTML = "Player: " + user + " " + "," + " " + "score: " + scores;
       containerSide.appendChild(scoreDisplay);
-    });}
+    })
   }
   }
 }
