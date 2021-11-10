@@ -132,8 +132,11 @@ html{
   text-transform: uppercase;
   background-color: linear-gradient(red,purple,white);
   margin-top: 5%;
+  background: url("/images/profilepicturev2.jpg");
+  background-repeat:no-repeat;
 }
 
 
 .goCrazy:hover {
-  cursor: grabbing;}
+  cursor: grabbing;
+}
