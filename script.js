@@ -136,10 +136,10 @@ function createClickMe(gameButton) {
       //adds one to the index for every click
     score++;
     goCrazy(gameButton)
-    gameButton.setAttribute("class", "")
 
     if (score < 1) {
     gameButton.innerHTML = "Click me!";
+    gameButton.setAttribute("class", "goCrazy")
 
     //create a function to change click me position
 
@@ -154,19 +154,11 @@ function createClickMe(gameButton) {
 }
 
 function goCrazy(gameButton) {
+  var i = Math.floor(Math.random() * 300) + 1;
+var j = Math.floor(Math.random() * 300) +1 ;
+  gameButton.style.left = i + "px"
+  gameButton.style.top = i + "px"
 
-  // gameButton.style.position = "absolute";
-  // gameButton.style.left = Math.floor(Math.random)*500 + 1;
-  // gameButton.style.right = Math.floor(Math.random)*500 + 1;
-
-// var i= Math.floor(Math.random()*500)+1;
-// var j = Math.floor(Math.random()*500)+1;
-// gameButton.style.position = "absolute"; 
-// gameButton.sytle.left = i+"px"; 
-// gameButton.style.right = j+"px";
-
-
-//   console.log(math.random)
 }
 
 //game over, before play again.
