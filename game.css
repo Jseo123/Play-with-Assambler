@@ -14,8 +14,11 @@ html{
   order: 0;
   height: 40em;
   width: 60%;
-  border-style:outset;
-  background-color: #4e3166;
+  box-shadow: 30px 10px blanchedalmond;
+  border-style: outset;
+  background-image: url("https://www.tuexperto.com/wp-content/uploads/2019/12/imagenes-espacio-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
@@ -47,6 +50,8 @@ html{
 }
 .game button {
   order: 2;
+  padding: 30%;
+  text-transform: uppercase;
   background-color: red;
   margin-top: 5%;
 }
@@ -100,42 +105,57 @@ html{
   background-color: rgb(248, 250, 250);
 }
 .goClick {
+  padding: 30%;
+  text-transform: uppercase;
   position: absolute;
   top: 15%;
 }
 
 .goClick2 {
+  padding: 5%;
+  text-transform: uppercase;
   position: absolute;
   top: 15%;
   right: 60%;
 }
 
 .goClick3 {
+  padding: 5%;
+  text-transform: uppercase;
   position: absolute;
   bottom: 25%;
 }
 
 .goClick4 {
+  padding: 5%;
+  text-transform: uppercase;
   position: absolute;
   bottom: 50%;
 }
 
 .goClick5 {
+  padding: 5%;
+  text-transform: uppercase;
   position: absolute;
   right: 70%;
   bottom: 50%;
 }
 
 .goClick6 {
+  padding: 5%;
+  text-transform: uppercase;
   position: absolute;
   right: 50%;
   bottom: 40%;
 }
 
-
 .gameInput {
   display: flex;
   flex-direction: column;
+  color: blanchedalmond;
+  text-transform: uppercase;
+  padding: 15%;
+  width: 100%;
 }
 .endGame {
   display: flex;

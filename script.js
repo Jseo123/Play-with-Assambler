@@ -86,11 +86,6 @@ function callMe() {
   giftmoon.setAttribute("class", "giphy-embed");
   game.appendChild(giftmoon);
 
-  var giftastro = document.createElement("iframe");
-  giftastro.setAttribute("src", "https://giphy.com/embed/eH4qxdqDul3ZCAXg6i");
-  giftastro.setAttribute("class", "giphy-astro");
-  mainContainer.appendChild(giftastro);
-
   //calls function to delete the HTML created here.
   deleteElements(startGame, inputField, username, formulary, giftmoon)
 }
@@ -124,6 +119,11 @@ function gameCreate() {
   let gameButton = document.createElement("button");
   gameButton.innerHTML = "Start game";
   game.appendChild(gameButton);
+
+  var giftastro = document.createElement("iframe");
+  giftastro.setAttribute("src", "https://giphy.com/embed/eH4qxdqDul3ZCAXg6i");
+  giftastro.setAttribute("class", "giphy-astro");
+  mainContainer.appendChild(giftastro);
   //calls function to change the inner HTML of gameButton and adds
   //counter to pass to scores.
   createClickMe(gameButton);
