@@ -62,7 +62,7 @@ html{
   margin-left: 10%;
   order: 3;
   width: 30%;
-  height:40%
+  height:40%;
 }
 .giphy-astro{
   position: absolute;
@@ -129,8 +129,18 @@ html{
 
 .goCrazy {
   position: relative;
-  padding: 10%;
+  padding: auto;
   text-transform: uppercase;
-  background-color:  red;
+  font-size: 120%;
+  color: aliceblue;
   margin-top: 5%;
+  background: url("/images/profilepicturev2.jpg");
+  background-repeat:no-repeat;
+  height: 30%;
+  width: 25%;
+}
+
+
+.goCrazy:hover {
+  cursor: grabbing;
 }

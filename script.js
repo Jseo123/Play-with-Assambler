@@ -144,7 +144,7 @@ function createClickMe(gameButton) {
     goCrazy(gameButton)
 
     if (score < 1) {
-    gameButton.innerHTML = "Click me!";
+    gameButton.innerHTML = "Hit me!";
     gameButton.setAttribute("class", "goCrazy")
 
     //create a function to change click me position
