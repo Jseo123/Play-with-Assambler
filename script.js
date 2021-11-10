@@ -127,12 +127,7 @@ function gameCreate() {
   gameButton.setAttribute("class", "startTheGame")
   game.appendChild(gameButton);
 
-  var giftastro = document.createElement("iframe");
-  giftastro.setAttribute("src", "https://giphy.com/embed/eH4qxdqDul3ZCAXg6i");
-  giftastro.setAttribute("class", "giphy-astro");
-  mainContainer.appendChild(giftastro);
-  //calls function to change the inner HTML of gameButton and adds
-  //counter to pass to scores.
+  
   createClickMe(gameButton);
 }
 

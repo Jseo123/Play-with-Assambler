@@ -128,4 +128,11 @@ html{
 
 .goCrazy {
   position: relative;
+  background-image:url("https://giphy.com/embed/eH4qxdqDul3ZCAXg6i"); background-repeat:repeat;
+  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.goCrazy:hover {
+  cursor: grabbing;
 }
