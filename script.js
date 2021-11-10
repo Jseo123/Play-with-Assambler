@@ -42,6 +42,13 @@ function callContainerSide(containerSide) {
     if (JSON.parse(localStorage.getItem("objectInArray"))) {
       displayScore = JSON.parse(localStorage.getItem("objectInArray"))
   
+
+      displayScore.sort(function (a, b) {
+        return a.score - b.score;
+      });
+
+      console.log(displayScore);
+
       displayScore.forEach(element => {
       let user = element.username
       let scores = element.score
