@@ -5,10 +5,12 @@ html{
   font-family: "Cairo", sans-serif;
   font-family: "Lato", sans-serif;
   position: relative;
+  overflow-x: hidden;
 }
 .body1{
   background: linear-gradient(#3d2661, #1d153b, rgb(111, 82, 192), rgb(38, 17, 66));
   position: relative;
+  overflow-x: hidden;
 }
 .gameContainer {
   display: flex;
@@ -162,6 +164,13 @@ html{
 .weMoving {
 
   width: 5%;
+  left: 20%;
+}
+
+.bomb {
+  position: absolute;
+  top:40%;
+  width: 2%;
   left: 20%;
 }
 
