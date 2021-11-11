@@ -10,7 +10,21 @@ window.onload = (e) => {
   playSpacebar()
   scoreSideFuntion()
   spaceSideFunction()
+  dontPress()
 };
+
+function dontPress() {
+ let dontPress = document.createElement("button");
+ dontPress.innerHTML = "Don´t press.";
+ dontPress.setAttribute("class", "dontTouch")
+ document.body.appendChild(dontPress)
+
+ dontPress.addEventListener("click", (e) => {
+  window.localStorage.clear();
+  window.location.reload();
+ })
+  
+}
 
 function spaceSideFunction() {
   if (JSON.parse(localStorage.getItem("objectInArray2"))) {
