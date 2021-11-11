@@ -124,12 +124,12 @@ function gameCreate() {
   gameButton.setAttribute("class", "startTheGame")
   game.appendChild(gameButton);
 
-  var giftastro = document.createElement("iframe");
-  giftastro.setAttribute("src", "https://giphy.com/embed/eH4qxdqDul3ZCAXg6i");
-  giftastro.setAttribute("class", "giphy-astro");
-  document.body.appendChild(giftastro);
-  //calls function to change the inner HTML of gameButton and adds
-  //counter to pass to scores.
+  // var giftastro = document.createElement("iframe");
+  // giftastro.setAttribute("src", "https://giphy.com/embed/eH4qxdqDul3ZCAXg6i");
+  // giftastro.setAttribute("class", "giphy-astro");
+  // document.body.appendChild(giftastro);
+  // //calls function to change the inner HTML of gameButton and adds
+  // //counter to pass to scores.
   createClickMe(gameButton);
 }
 
@@ -200,7 +200,7 @@ function reset(playAgain, scoreShow, emptyDiv) {
     localStorage.setItem("ScoreArray", ScoreArray);
     let objectInArray = JSON.stringify(displayScore)
     let objStorage = localStorage.setItem("objectInArray", objectInArray)
-   window.location.reload();
+    window.location.reload();
   });
 }
 
