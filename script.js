@@ -190,9 +190,10 @@ function createClickMe(gameButton) {
 
 function goCrazy(gameButton) {
   var i = Math.floor(Math.random() * 300) + 1;
-var j = Math.floor(Math.random() * 300) +1 ;
+var j = Math.floor(Math.random() * 400) +1 ;
   gameButton.style.left = i + "px"
   gameButton.style.top = i + "px"
+  gameButton.style.width = j + "px"
 }
 
 //game over, before play again.

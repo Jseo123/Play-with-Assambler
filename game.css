@@ -171,15 +171,14 @@ html{
     position: relative;
     padding: auto;
     text-transform: uppercase;
+    text-size-adjust: auto;
     font-size: 120%;
     border-radius: 120%;
-    color: aliceblue;
+    color: black;
     margin-top: 5%;
     background: url("/images/nave.png");
     background-repeat:no-repeat;
     background-size: cover;
-    height: 30%;
-    width: 15%;
   }
 
   .planetExpress {
