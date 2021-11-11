@@ -22,7 +22,6 @@ function scoreSideFuntion() {
 
 function lastPlayer(scores) {
   if (scores){
-    
     let player = scores.username;
     let score  = scores.score;
     
@@ -40,7 +39,6 @@ function callContainerSide(containerSide) {
   if (containerSide) {
     if (JSON.parse(localStorage.getItem("objectInArray"))) {
       displayScore = JSON.parse(localStorage.getItem("objectInArray"))
-  
 
       displayScore.sort(function (a, b) {
         return b.score - a.score;
@@ -114,7 +112,6 @@ function createCurrentPlayer(fieldValue) {
     currentPlayer.innerHTML = "Currently playing: " + fieldValue;
     currentPlayer.setAttribute("class", "currentPlayer")
     scoreSection.appendChild(currentPlayer);
-    
 }
 
 //creates game button
@@ -124,12 +121,9 @@ function gameCreate() {
   gameButton.setAttribute("class", "startTheGame")
   game.appendChild(gameButton);
 
-  // var giftastro = document.createElement("iframe");
-  // giftastro.setAttribute("src", "https://giphy.com/embed/eH4qxdqDul3ZCAXg6i");
-  // giftastro.setAttribute("class", "giphy-astro");
-  // document.body.appendChild(giftastro);
-  // //calls function to change the inner HTML of gameButton and adds
-  // //counter to pass to scores.
+
+  //calls function to change the inner HTML of gameButton and adds
+  //counter to pass to scores.
   createClickMe(gameButton);
 }
 
@@ -148,8 +142,6 @@ function createClickMe(gameButton) {
     //create a function to change click me position
 
     //Stops the game and creates last page. The if is to make sure it executes only once.
-    
-    
     setTimeout(() => {
       showScore(score, gameButton);
     }, 10000);
@@ -162,7 +154,6 @@ function goCrazy(gameButton) {
 var j = Math.floor(Math.random() * 300) +1 ;
   gameButton.style.left = i + "px"
   gameButton.style.top = i + "px"
-
 }
 
 //game over, before play again.
@@ -203,4 +194,7 @@ function reset(playAgain, scoreShow, emptyDiv) {
     window.location.reload();
   });
 }
+
+//GAME WITH KEYBOARD
+
 
