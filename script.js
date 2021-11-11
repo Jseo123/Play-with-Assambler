@@ -252,13 +252,10 @@ function gameCreate() {
   gameButton.innerHTML = "Start game";
   gameButton.setAttribute("class", "startTheGame");
   game.appendChild(gameButton);
-  
-  // var giftastro = document.createElement("iframe");
-  // giftastro.setAttribute("src", "https://giphy.com/embed/eH4qxdqDul3ZCAXg6i");
-  // giftastro.setAttribute("class", "giphy-astro");
+
   // document.body.appendChild(giftastro);
-  // //calls function to change the inner HTML of gameButton and adds
-  // //counter to pass to scores.
+   //calls function to change the inner HTML of gameButton and adds
+   //counter to pass to scores.
   createClickMe(gameButton);
 }
 
@@ -380,7 +377,12 @@ function deleteSpace(startGame, inputField, username, formulary, giftmoon) {
     //pushed Username into display score array.
     let fieldValue = inputField.value;
     playerScoreSpace.username = fieldValue;
+    let planetExpress = document.createElement("img");
+    planetExpress.setAttribute("class", "planetExpress");
+    planetExpress.setAttribute("src", "/images/futurama.png");
+    document.body.appendChild(planetExpress);
     createCurrentPlayer(fieldValue);
+    animateShip(planetExpress);
   });
 }
 //creates game button
@@ -401,8 +403,22 @@ function createSpaceMe(gameButton) {
     spacebarBtn.innerHTML = "Hit the <strong>SPACE</strong> bar";
     game.appendChild(spacebarBtn);
   btnPlay(spacebarBtn);
+  btnAnimation(spacebarBtn)
   })
 };
+
+function btnAnimation(spacebarBtn) {
+
+  setInterval(() => {
+    var i = Math.floor(Math.random() * 300) + 1;
+    var j = Math.floor(Math.random() * 400) +1 ;
+    spacebarBtn.style.position = "relative";
+    spacebarBtn.style.left = i + "px";
+    spacebarBtn.style.top = i + "px";
+    spacebarBtn.style.width = j + "px";
+  }, 1000);
+
+}
 
 
 function btnPlay(spacebarBtn) {
