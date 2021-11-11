@@ -81,7 +81,7 @@ function scoreSideFuntion() {
 }
 
 function lastPlayer(scores) {
-  if (scores) {
+  if (scores.username != "") {
     let player = scores.username;
     let score = scores.score;
 
@@ -90,7 +90,7 @@ function lastPlayer(scores) {
     scoreSection.appendChild(containerSide);
     let lastPlayerShow = document.createElement("p");
     lastPlayerShow.innerHTML =
-      "Last player: " + player + "," + " " + "score: " + score;
+      "Last click player: " + player + "," + " " + "score: " + score;
     containerSide.appendChild(lastPlayerShow);
     callContainerSide(containerSide);
   }
@@ -271,9 +271,10 @@ function createClickMe(gameButton) {
   
   function goCrazy(gameButton) {
     var i = Math.floor(Math.random() * 300) + 1;
-    var j = Math.floor(Math.random() * 300) +1 ;
+    var j = Math.floor(Math.random() * 400) +1 ;
     gameButton.style.left = i + "px"
     gameButton.style.top = i + "px"
+    gameButton.style.width = j + "px";
     
   }
   
