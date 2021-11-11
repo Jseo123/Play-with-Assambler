@@ -415,7 +415,6 @@ function btnAnimation(spacebarBtn) {
     spacebarBtn.style.position = "relative";
     spacebarBtn.style.left = i + "px";
     spacebarBtn.style.top = i + "px";
-    spacebarBtn.style.width = j + "px";
   }, 1000);
 
 }
