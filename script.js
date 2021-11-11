@@ -113,7 +113,7 @@ function bombIt(bomb) {
   var pos = 400;
   var id = setInterval(frame, 5);
   function frame() {
-    if (pos === 4100) {
+    if (pos === 2900) {
       clearInterval(id);
     } else {
       pos++;
@@ -127,7 +127,7 @@ function moveLeft(planetExpress) {
   var pos = 350;
   var id = setInterval(frame, 10);
   function frame() {
-    if (pos === 4100) {
+    if (pos === 2900) {
       clearInterval(id);
     } else {
       pos++;

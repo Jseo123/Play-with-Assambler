@@ -5,10 +5,12 @@ html{
   font-family: "Cairo", sans-serif;
   font-family: "Lato", sans-serif;
   position: relative;
+  overflow-x: hidden;
 }
 .body1{
   background: linear-gradient(#262a61, #12073b, rgb(17, 37, 155), rgb(1, 2, 3));
   position: relative;
+  overflow-x: hidden;
 }
 .gameContainer {
   display: flex;
