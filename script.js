@@ -1,13 +1,76 @@
 const mainContainer = document.querySelector(".gameContainer");
 const game = document.getElementById("gaming");
 const scoreSection = document.querySelector(".scoreSection");
+let spaceArray = [];
 let displayScore = [];
-let myPlayerScore = { username: "", score: "" };
+let myPlayerScore = {username:"", score:""};
+let playerScoreSpace = {username:"", score:""};
 // Calls the function on windows load to create the username input and button.
 window.onload = (e) => {
-  scoreSideFuntion();
-  callMe();
+  playSpacebar()
+  scoreSideFuntion()
+  spaceSideFunction()
 };
+
+function spaceSideFunction() {
+  if (JSON.parse(localStorage.getItem("objectInArray2"))) {
+  spaceArray = JSON.parse(localStorage.getItem("objectInArray2"))
+  printScore()
+console.log(spaceArray)
+}
+}
+
+function printScore() {
+  let spaceSection = document.createElement("div");
+  spaceSection.setAttribute("class", "endDivSpace");
+  scoreSection.appendChild(spaceSection);
+
+  let spacerbarUser = document.createElement("h3");
+  spacerbarUser.innerHTML = "Space bar users";
+  scoreSection.appendChild(spacerbarUser);
+
+
+  spaceArray.forEach(element => {
+    let userSpace = element.username;
+    let scoreSpaces = element.score;
+
+    let endScore = document.createElement("p");
+    endScore.setAttribute("class", "endCss");
+    endScore.innerHTML = "Player: " + userSpace + " " + "," + " " + "score: " + scoreSpaces;
+    spaceSection.appendChild(endScore);
+  });
+}
+
+function playSpacebar(){
+  //DIV CONTENEDOR DE LOS BOTONES
+  let divButton = document.createElement("div");
+  divButton.setAttribute("class", "divContainer");
+  game.appendChild(divButton);
+
+//BOTONES INICIALES
+  let keyButton = document.createElement("button");
+  keyButton.innerHTML = "Play with Spacebar";
+  keyButton.setAttribute("class", "btnEqual");
+  divButton.appendChild(keyButton);
+
+  let clickButton = document.createElement("button");
+  clickButton.innerHTML = "Play with Click";
+  clickButton.setAttribute("class", "btnEqual");
+  divButton.appendChild(clickButton);
+  linkbtn(keyButton, clickButton, divButton);
+}
+function linkbtn(keyButton, clickButton, divButton) {
+  clickButton.addEventListener("click", (e) => {
+    game.removeChild(divButton);
+    callMe();
+  });
+  
+  keyButton.addEventListener("click", (e) => {
+    game.removeChild(divButton);
+    callSpace();
+  })
+}
+
 
 function scoreSideFuntion() {
   let stringedScore = localStorage.getItem("ScoreArray");
@@ -60,7 +123,7 @@ function callMe() {
   // Added form element to be able to capture username.
   var formulary = document.createElement("form");
   game.appendChild(formulary);
-
+  
   //Turned Username into a label to be able to add form properties.
   var username = document.createElement("label");
   username.innerHTML = "Username";
@@ -72,7 +135,7 @@ function callMe() {
   inputField.setAttribute("type", "text");
   inputField.setAttribute("name", "inputField");
   username.appendChild(inputField);
-
+  
   var startGame = document.createElement("button");
   startGame.innerHTML = "Start Game";
   startGame.setAttribute("class", "startButton");
@@ -83,7 +146,7 @@ function callMe() {
   giftmoon.setAttribute("src", "https://giphy.com/embed/f7eeSQiMEfNUVVBuNI");
   giftmoon.setAttribute("class", "giphy-embed");
   game.appendChild(giftmoon);
-
+  
   //calls function to delete the HTML created here.
   deleteElements(startGame, inputField, username, formulary, giftmoon);
 }
@@ -172,9 +235,13 @@ function gameCreate() {
   gameButton.innerHTML = "Start game";
   gameButton.setAttribute("class", "startTheGame");
   game.appendChild(gameButton);
-
-  //calls function to change the inner HTML of gameButton and adds
-  //counter to pass to scores.
+  
+  // var giftastro = document.createElement("iframe");
+  // giftastro.setAttribute("src", "https://giphy.com/embed/eH4qxdqDul3ZCAXg6i");
+  // giftastro.setAttribute("class", "giphy-astro");
+  // document.body.appendChild(giftastro);
+  // //calls function to change the inner HTML of gameButton and adds
+  // //counter to pass to scores.
   createClickMe(gameButton);
 }
 
@@ -182,65 +249,183 @@ function createClickMe(gameButton) {
   //Starts game
   let score = -1;
   gameButton.addEventListener("click", (e) => {
-    //adds one to the index for every click
-    score++;
-    goCrazy(gameButton);
-
-    if (score < 1) {
-      gameButton.innerHTML = "Catch Me!";
-      gameButton.setAttribute("class", "goCrazy");
-
-      //create a function to change click me position
-
-      //Stops the game and creates last page. The if is to make sure it executes only once.
-      setTimeout(() => {
-        showScore(score, gameButton);
-      }, 10000);
-    }
-  });
-}
-
-function goCrazy(gameButton) {
-  var i = Math.floor(Math.random() * 300) + 1;
-  var j = Math.floor(Math.random() * 400) + 1;
-  gameButton.style.left = i + "px";
-  gameButton.style.top = i + "px";
-  gameButton.style.width = j + "px";
-}
-
-//game over, before play again.
-function showScore(score, gameButton) {
-  game.removeChild(gameButton);
-  myPlayerScore.score = score.toString();
-  var emptyDiv = document.createElement("div");
-  emptyDiv.setAttribute("class", "endGame");
-  game.appendChild(emptyDiv);
-
-  var scoreShow = document.createElement("p");
-  scoreShow.setAttribute("class", "scoreShow");
-  scoreShow.innerHTML =
+      //adds one to the index for every click
+      score++;
+      goCrazy(gameButton)
+      
+      if (score < 1) {
+        gameButton.innerHTML = "Catch Me!";
+        gameButton.setAttribute("class", "goCrazy")
+        
+        //create a function to change click me position
+        
+        //Stops the game and creates last page. The if is to make sure it executes only once.
+        
+    
+        setTimeout(() => {
+          showScore(score, gameButton);
+        }, 10000);
+      }
+    });
+  }
+  
+  function goCrazy(gameButton) {
+    var i = Math.floor(Math.random() * 300) + 1;
+    var j = Math.floor(Math.random() * 300) +1 ;
+    gameButton.style.left = i + "px"
+    gameButton.style.top = i + "px"
+    
+  }
+  
+  //game over, before play again.
+  function showScore(score, gameButton) {
+    game.removeChild(gameButton);
+    myPlayerScore.score = score.toString()
+    var emptyDiv = document.createElement("div");
+    emptyDiv.setAttribute("class", "endGame");
+    game.appendChild(emptyDiv);
+    
+    
+    var scoreShow = document.createElement("p");
+    scoreShow.setAttribute("class", "scoreShow")
+    scoreShow.innerHTML =
     "Congratulations you got " + score.toString() + " " + "points";
-  emptyDiv.appendChild(scoreShow);
+    emptyDiv.appendChild(scoreShow);
+    
+    var playAgain = document.createElement("button");
+    playAgain.innerHTML = "Play Again?";
+    playAgain.setAttribute("class", "playAgain")
+    emptyDiv.appendChild(playAgain);
+    console.log(myPlayerScore)
+    
+    
+    displayScore.push(myPlayerScore)
+    
+    reset(playAgain, scoreShow, emptyDiv);
+  }
+  
+  function reset(playAgain, scoreShow, emptyDiv) {
+    playAgain.addEventListener("click", () => {
+      let ScoreArray = JSON.stringify(myPlayerScore);
+      localStorage.setItem("ScoreArray", ScoreArray);
+      let objectInArray = JSON.stringify(displayScore)
+      let objStorage = localStorage.setItem("objectInArray", objectInArray)
+      let objectInArray2 = JSON.stringify(spaceArray)
+      localStorage.setItem("objectInArray2", objectInArray2)
+      window.location.reload();
+    });
+  }
 
-  var playAgain = document.createElement("button");
-  playAgain.innerHTML = "Play Again?";
-  playAgain.setAttribute("class", "playAgain");
-  emptyDiv.appendChild(playAgain);
-  console.log(myPlayerScore);
+  //GAME WITH KEYBOARD
 
-  displayScore.push(myPlayerScore);
+  function callSpace() {
+    // Added form element to be able to capture username.
+  var formulary = document.createElement("form");
+  game.appendChild(formulary);
+  
+  //Turned Username into a label to be able to add form properties.
+  var username = document.createElement("label");
+  username.innerHTML = "Username";
+  username.setAttribute("class", "gameInput");
+  username.setAttribute("for", "inputField");
+  formulary.appendChild(username);
+  //Gave inputField properties to be able to capture infor and store later.
+  var inputField = document.createElement("input");
+  inputField.setAttribute("type", "text");
+  inputField.setAttribute("name", "inputField");
+  username.appendChild(inputField);
+  
+  var startGame = document.createElement("button");
+  startGame.innerHTML = "Start Game";
+  startGame.setAttribute("class", "startButton");
+  startGame.setAttribute("type", "submit");
+  username.appendChild(startGame);
+  
+  var giftmoon = document.createElement("iframe");
+  giftmoon.setAttribute("src", "https://giphy.com/embed/f7eeSQiMEfNUVVBuNI");
+  giftmoon.setAttribute("class", "giphy-embed");
+  game.appendChild(giftmoon);
 
-  reset(playAgain, scoreShow, emptyDiv);
-}
+  deleteSpace(startGame, inputField, username, formulary, giftmoon);
+  }
 
-function reset(playAgain, scoreShow, emptyDiv) {
-  playAgain.addEventListener("click", () => {
-    let ScoreArray = JSON.stringify(myPlayerScore);
-    localStorage.setItem("ScoreArray", ScoreArray);
-    let objectInArray = JSON.stringify(displayScore);
-    let objStorage = localStorage.setItem("objectInArray", objectInArray);
-    window.location.reload();
+//deletes html elements.
+function deleteSpace(startGame, inputField, username, formulary, giftmoon) {
+  formulary.addEventListener("submit", (e) => {
+    //prevents form submit.
+    e.preventDefault();
+    game.removeChild(formulary);
+    game.removeChild(giftmoon);
+    //calls on function to create game button.
+    playSpaceGame();
+
+    //pushed Username into display score array.
+    let fieldValue = inputField.value;
+    playerScoreSpace.username = fieldValue;
+    createCurrentPlayer(fieldValue);
   });
 }
+//creates game button
+function playSpaceGame() {
+  let gameButton = document.createElement("button");
+  gameButton.innerHTML = "Start game";
+  gameButton.setAttribute("class", "startTheGame")
+  game.appendChild(gameButton);
+  
+  // var giftastro = document.createElement("iframe");
+  // giftastro.setAttribute("src", "https://giphy.com/embed/eH4qxdqDul3ZCAXg6i");
+  // giftastro.setAttribute("class", "giphy-astro");
+  // document.body.appendChild(giftastro);
+  // //calls function to change the inner HTML of gameButton and adds
+  // //counter to pass to scores.
+  createSpaceMe(gameButton);
+}
+function createSpaceMe(gameButton) {
+  gameButton.addEventListener("click", (e) => {
+    game.removeChild(gameButton);
+    let spacebarBtn = document.createElement("button");
+    spacebarBtn.setAttribute("class", "btnSpacebar");
+    spacebarBtn.innerHTML = "Hit the <strong>SPACE</strong> bar";
+    game.appendChild(spacebarBtn);
+  btnPlay(spacebarBtn);
+  })
+};
 
-//GAME WITH KEYBOARD
+
+function btnPlay(spacebarBtn) {
+  let countSpace = 0;
+
+  document.addEventListener('keydown',  (e)  =>{
+    if (e.keyCode === 32) {
+        countSpace++;
+    }
+  })
+  setTimeout(() => {
+    recordScore(countSpace, spacebarBtn);
+  }, 10000);
+}
+
+function recordScore(countSpace, spacebarBtn){
+  game.removeChild(spacebarBtn);
+  playerScoreSpace.score = countSpace;
+
+  let countScore = document.createElement("div");
+  countScore.setAttribute("class", "score1");
+  game.appendChild(countScore);
+
+var scoreShow = document.createElement("p");
+    scoreShow.setAttribute("class", "scoreShow")
+    scoreShow.innerHTML =
+    "Congratulations you got " + countSpace.toString() + " " + "points";
+    countScore.appendChild(scoreShow);
+    
+    var playAgain = document.createElement("button");
+    playAgain.innerHTML = "Play Again?";
+    playAgain.setAttribute("class", "playAgain")
+    countScore.appendChild(playAgain);
+
+    //add the obj to Array emmty
+    spaceArray.push(playerScoreSpace)
+    console.log(spaceArray);
+    reset(playAgain);
+}
