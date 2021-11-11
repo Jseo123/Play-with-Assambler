@@ -26,3 +26,16 @@
 .imgClick {
   width: 20%;
 }
+.btnSpacebar{
+  position: relative;
+  padding: auto;
+  text-transform: uppercase;
+  font-size: 120%;
+  border-radius: 10%;
+  color: aliceblue;
+  margin-top: 5%;
+  background: url("images/keyFutu.png");
+  background-size: cover;
+  height: 50%;
+  width: 55%;
+}

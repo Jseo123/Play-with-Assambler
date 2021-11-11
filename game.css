@@ -51,9 +51,23 @@ html{
 .startButton{
   order: 2;
   margin-top: 10%;
-  padding: 5%;
+  padding: 15%;
   color: aliceblue;
   background-color: red;
+}
+.startButton:Hover {
+  background: #da9caa;
+  color: #470f20;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  box-shadow: inset 0 0 0 3px #531927;
+}
+.giphy-embed{ /*LUNA GIF*/
+  margin-left: 10%;
+  order: 3;
+  width: 30%;
+  height:40%;
 }
 .startTheGame {
   order: 2;
@@ -63,11 +77,13 @@ html{
   background-color: red;
   margin-top: 5%;
 }
-.giphy-embed{ /*LUNA GIF*/
-  margin-left: 10%;
-  order: 3;
-  width: 30%;
-  height:40%;
+.startTheGame:Hover {
+  background: #da9caa;
+  color: #470f20;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  box-shadow: inset 0 0 0 3px #531927;
 }
 .giphy-astro{
   order:0;
