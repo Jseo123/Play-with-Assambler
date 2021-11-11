@@ -4,9 +4,11 @@ html{
 .body {
   font-family: "Cairo", sans-serif;
   font-family: "Lato", sans-serif;
+  position: relative;
 }
 .body1{
   background: linear-gradient(#262a61, #12073b, rgb(17, 37, 155), rgb(1, 2, 3));
+  position: relative;
 }
 .gameContainer {
   display: flex;
@@ -156,6 +158,14 @@ html{
   width: 5%;
   left: 20%;
 }
+
+.weMoving {
+
+  width: 5%;
+  left: 20%;
+}
+
+
 @media only screen and (min-width: 2000px){
   .goCrazy {
     position: relative;

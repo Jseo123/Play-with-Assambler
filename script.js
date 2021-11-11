@@ -59,10 +59,6 @@ function callContainerSide(containerSide) {
 //creates the first phase html.
 function callMe() {
 
-let planetExpress = document.createElement("img")
-planetExpress.setAttribute("class", "planetExpress")
-planetExpress.setAttribute("src", "/images/futurama.png")
-document.body.appendChild(planetExpress)
 
 
 
@@ -97,6 +93,36 @@ document.body.appendChild(planetExpress)
   deleteElements(startGame, inputField, username, formulary, giftmoon)
 }
 
+function animateShip(planetExpress) {
+  var pos = 0;
+  var id = setInterval(frame, 10)
+  function frame() {
+    if (pos === 350) {
+      clearInterval(id)
+      moveLeft(planetExpress)
+    }
+     else {
+       pos++;
+       planetExpress.style.top = pos + "px";
+       planetExpress.style.left = pos + "px";
+     }
+  }
+}
+
+function moveLeft(planetExpress) {
+  var pos = 0;
+  var id = setInterval(frame, 10)
+  function frame() {
+    if (pos === 2100){
+      clearInterval(id)
+    }
+    else {
+      pos++;
+      planetExpress.style.left = pos + "px";
+    }
+  }
+}
+
 //deletes html elements.
 function deleteElements(startGame, inputField, username, formulary, giftmoon) {
   formulary.addEventListener("submit", (e) => {
@@ -109,7 +135,13 @@ function deleteElements(startGame, inputField, username, formulary, giftmoon) {
     //pushed Username into display score array.
     let fieldValue = inputField.value;
     myPlayerScore.username = fieldValue;
-    createCurrentPlayer(fieldValue);
+
+    let planetExpress = document.createElement("img")
+planetExpress.setAttribute("class", "planetExpress")
+planetExpress.setAttribute("src", "/images/futurama.png")
+document.body.appendChild(planetExpress)
+createCurrentPlayer(fieldValue);
+    animateShip(planetExpress)
   });
 }
 
