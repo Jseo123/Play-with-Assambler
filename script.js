@@ -110,7 +110,7 @@ function animateShip(planetExpress) {
 }
 
 function moveLeft(planetExpress) {
-  var pos = 0;
+  var pos = 350;
   var id = setInterval(frame, 10)
   function frame() {
     if (pos === 2100){
@@ -118,6 +118,7 @@ function moveLeft(planetExpress) {
     }
     else {
       pos++;
+      planetExpress.style.top = 350 + "px";
       planetExpress.style.left = pos + "px";
     }
   }
