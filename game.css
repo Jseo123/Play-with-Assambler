@@ -7,7 +7,7 @@ html{
   position: relative;
 }
 .body1{
-  background: linear-gradient(#262a61, #12073b, rgb(17, 37, 155), rgb(1, 2, 3));
+  background: linear-gradient(#3d2661, #1d153b, rgb(111, 82, 192), rgb(38, 17, 66));
   position: relative;
 }
 .gameContainer {
@@ -140,7 +140,7 @@ html{
   border-radius: 120%;
   color: aliceblue;
   margin-top: 5%;
-  background: url("/images/nave.png");
+  background: url("/images/pngegg.png");
   background-repeat:no-repeat;
   background-size: cover;
   height: 30%;
@@ -176,7 +176,7 @@ html{
     border-radius: 120%;
     color: black;
     margin-top: 5%;
-    background: url("/images/nave.png");
+    background: url("/images/pngegg.png");
     background-repeat:no-repeat;
     background-size: cover;
   }
