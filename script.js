@@ -204,3 +204,5 @@ function reset(playAgain, scoreShow, emptyDiv) {
   });
 }
 
+//GAME WITH KEYBOARD
+
