@@ -15,6 +15,11 @@ window.onload = (e) => {
 function spaceSideFunction() {
   if (JSON.parse(localStorage.getItem("objectInArray2"))) {
   spaceArray = JSON.parse(localStorage.getItem("objectInArray2"))
+  
+  spaceArray.sort(function (a, b) {
+    return b.score - a.score;
+  });
+  
   printScore()
 console.log(spaceArray)
 }
@@ -372,13 +377,8 @@ function playSpaceGame() {
   gameButton.innerHTML = "Start game";
   gameButton.setAttribute("class", "startTheGame")
   game.appendChild(gameButton);
-  
-  // var giftastro = document.createElement("iframe");
-  // giftastro.setAttribute("src", "https://giphy.com/embed/eH4qxdqDul3ZCAXg6i");
-  // giftastro.setAttribute("class", "giphy-astro");
-  // document.body.appendChild(giftastro);
-  // //calls function to change the inner HTML of gameButton and adds
-  // //counter to pass to scores.
+   //calls function to change the inner HTML of gameButton and adds
+   //counter to pass to scores.
   createSpaceMe(gameButton);
 }
 function createSpaceMe(gameButton) {
