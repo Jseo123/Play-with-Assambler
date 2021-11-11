@@ -58,11 +58,21 @@ function playSpacebar(){
   keyButton.setAttribute("class", "btnEqual");
   divButton.appendChild(keyButton);
 
+  var imgKey = document.createElement("img");
+  imgKey.setAttribute("src", "/images/keybar.png");
+  imgKey.setAttribute("class", "imgKey");
+  keyButton.appendChild(imgKey);
+
   let clickButton = document.createElement("button");
   clickButton.innerHTML = "Play with Click";
   clickButton.setAttribute("class", "btnEqual");
   divButton.appendChild(clickButton);
   linkbtn(keyButton, clickButton, divButton);
+
+  var imgClick = document.createElement("img");
+  imgClick.setAttribute("src", "images/mouse.png");
+  imgClick.setAttribute("class", "imgClick");
+  clickButton.appendChild(imgClick);
 }
 function linkbtn(keyButton, clickButton, divButton) {
   clickButton.addEventListener("click", (e) => {
