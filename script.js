@@ -367,7 +367,12 @@ function deleteSpace(startGame, inputField, username, formulary, giftmoon) {
     //pushed Username into display score array.
     let fieldValue = inputField.value;
     playerScoreSpace.username = fieldValue;
+    let planetExpress = document.createElement("img");
+    planetExpress.setAttribute("class", "planetExpress");
+    planetExpress.setAttribute("src", "/images/futurama.png");
+    document.body.appendChild(planetExpress);
     createCurrentPlayer(fieldValue);
+    animateShip(planetExpress);
   });
 }
 //creates game button
