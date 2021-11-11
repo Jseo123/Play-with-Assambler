@@ -1,14 +1,12 @@
 const mainContainer = document.querySelector(".gameContainer");
 const game = document.getElementById("gaming");
 const scoreSection = document.querySelector(".scoreSection");
-
 let displayScore = [];
 let myPlayerScore = {username:"", score:""};
 // Calls the function on windows load to create the username input and button.
 window.onload = (e) => {
   scoreSideFuntion()
   callMe();
-
 };
 
 function scoreSideFuntion() {
@@ -60,6 +58,14 @@ function callContainerSide(containerSide) {
 
 //creates the first phase html.
 function callMe() {
+
+let planetExpress = document.createElement("img")
+planetExpress.setAttribute("class", "planetExpress")
+planetExpress.setAttribute("src", "/images/futurama.png")
+document.body.appendChild(planetExpress)
+
+
+
   // Added form element to be able to capture username.
   var formulary = document.createElement("form");
   game.appendChild(formulary);

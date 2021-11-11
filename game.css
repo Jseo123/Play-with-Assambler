@@ -150,6 +150,8 @@ html{
   cursor: grabbing;
 }
 
+
+
 @media only screen and (min-width: 2000px){
   .goCrazy {
     position: relative;
@@ -164,5 +166,12 @@ html{
     background-size: cover;
     height: 30%;
     width: 15%;
+  }
+
+  .planetExpress {
+    position: absolute;
+    top:40%;
+    width: 5%;
+    left: 20%;
   }
 }
