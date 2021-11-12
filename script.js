@@ -116,7 +116,7 @@ function lastPlayer(scores) {
   scoreSection.appendChild(clickUser);
   
   if (scores) {
-    if (scores.username != "") {
+     
     let player = scores.username;
     let score = scores.score;
 
@@ -127,7 +127,6 @@ function lastPlayer(scores) {
       "Last click player: " + player + "," + " " + "score: " + score;
     containerSide.appendChild(lastPlayerShow);
     callContainerSide(containerSide);
-  }
   }
 }
 
