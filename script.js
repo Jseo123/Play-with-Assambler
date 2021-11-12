@@ -32,7 +32,7 @@ function printScore() {
 
   let spacerbarUser = document.createElement("h3");
   spacerbarUser.innerHTML = "Space bar users";
-  scoreSection.appendChild(spacerbarUser);
+  spaceSection.appendChild(spacerbarUser);
 
 
   spaceArray.forEach(element => {
@@ -96,14 +96,18 @@ function scoreSideFuntion() {
 }
 
 function lastPlayer(scores) {
+  let clickUser = document.createElement("h3");
+  clickUser.innerHTML = "Click users";
+  clickUser.setAttribute("class", "lastPs")
+  scoreSection.appendChild(clickUser);
+  
   if (scores) {
     if (scores.username != "") {
     let player = scores.username;
     let score = scores.score;
 
     let containerSide = document.createElement("div");
-    containerSide.setAttribute("class", "lastPs");
-    scoreSection.appendChild(containerSide);
+    clickUser.appendChild(containerSide);
     let lastPlayerShow = document.createElement("p");
     lastPlayerShow.innerHTML =
       "Last click player: " + player + "," + " " + "score: " + score;

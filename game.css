@@ -18,7 +18,7 @@ html{
   order: 0;
   height: 40em;
   width: 70%;
-  box-shadow: 30px 10px blanchedalmond;
+  box-shadow: 15px 10px 20px 10px #645668;
   border-style: outset;
   background-image: url("https://www.tuexperto.com/wp-content/uploads/2019/12/imagenes-espacio-2.jpg");
   background-repeat: no-repeat;
@@ -97,7 +97,7 @@ html{
   display: flex;
   flex-direction: column;
   width: 30%;
-  background-color: crimson;
+  background-color: rgba(153, 68, 85, 0.767);
   margin-top: 2%;
   margin-bottom: 10%;
   margin-right: 3%;
@@ -140,14 +140,24 @@ html{
 }
 
 .playAgain {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.699);
+  color: aliceblue;
   padding: 15%;
   font-size: 20px;
+}
+.playAgain:Hover {
+  background: #da9caa;
+  color: #470f20;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  box-shadow: inset 0 0 0 3px #531927;
 }
 
 .scoreShow {
   color: white;
-  font-size: 20px;
+  font-size: 30px;
+  text-shadow: #831a1a;
 }
 
 .goCrazy {
